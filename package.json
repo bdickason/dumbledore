@@ -2,9 +2,9 @@
   "name": "dumbledore",
   "version": "0.0.1",
   "description": "HPC-specific code for the hpc.dumbledore twitch bot",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "./node_modules/.bin/gulp test",
     "watch": "./node_modules/.bin/gulp watch"
   },
@@ -17,13 +17,13 @@
       "name": "bdickason",
       "email": "dickason@gmail.com"
     }
-],
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/bdickason/dumbledore.git"
   },
   "dependencies": {
-    "dotenv": "4.0.0"
+    "dotenv": "^4.0.0"
   },
   "license": "GPL-3.0",
   "devDependencies": {
