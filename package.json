@@ -1,0 +1,35 @@
+{
+  "name": "dumbledore",
+  "version": "0.0.1",
+  "description": "HPC-specific code for the hpc.dumbledore twitch bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "./node_modules/.bin/gulp test",
+    "watch": "./node_modules/.bin/gulp watch"
+  },
+  "engines": {
+    "node": ">=4.4.0"
+  },
+  "author": "bdickason",
+  "contributors": [
+    {
+      "name": "bdickason",
+      "email": "dickason@gmail.com"
+    }
+],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bdickason/dumbledore.git"
+  },
+  "dependencies": {
+    "dotenv": "4.0.0"
+  },
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "gulp": "*",
+    "gulp-mocha": "^4.3.1",
+    "mocha": "^4.0.1"
+  }
+}
