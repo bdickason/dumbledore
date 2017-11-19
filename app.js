@@ -25,17 +25,7 @@ var bot = new hpcbot(options);
 // Initialize overlays
 //
 
-var overlays = [
-  {
-    name: 'hpcwins',
-    type: 'video',
-    file: 'overlays/events/hpcwins.mp4'
-  },
-  {
-    name: 'powermove',
-    type: 'video',
-    file: 'overlays/events/powermove.mp4'
-  }];
+var overlays = require('./overlays/overlays');
 
 bot.overlays.add(overlays);
 // bot.overlays.add(overlays.powermove);
