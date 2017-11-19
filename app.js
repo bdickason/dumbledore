@@ -25,7 +25,7 @@ var bot = new hpcbot(options);
 // Initialize overlays
 //
 
-var overlays = require('./overlays/overlays');
+var overlays = require('./overlays');
 
 bot.overlays.add(overlays);
 // bot.overlays.add(overlays.powermove);
