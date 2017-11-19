@@ -12,35 +12,15 @@ var options = {
   oauth: process.env.HPC_PASSWORD,
   channel: process.env.HPC_CHANNEL,
   clientID: process.env.HPC_CLIENTID,
-  mixpanel: process.env.HPC_MIXPANEL,
+  mixpanel: process.env.MIXPANEL,
   eventbus: events
 };
 
 // Initialize bot
 var bot = new hpcbot(options);
 
-// Load the modules you want to use
-// bot.use(hpcbot.chat); // Should this be always on?
+// Setup chat listeners
 
-// Initialize overlays
-//
-
+// Setup overlays
 var overlays = require('./overlays');
-
 bot.overlays.add(overlays);
-// bot.overlays.add(overlays.powermove);
-
-// hpcbot.overlays.add(overlays);
-
-// bot.use(hpcbot.webui);
-// bot.use(hpcbot.db);
-// bot.use(hpcbot.resource);
-
-/*
-
-
-// Initialize overlays module
-bot.use(hpcbot.overlays({ port: 3000});
-
-// hpcbot.overlays.add(overlays);
-*/
