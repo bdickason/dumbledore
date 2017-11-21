@@ -168,4 +168,7 @@ module.exports = overlays = [
     name: 'qsw',
     type: 'video',
     file: 'overlays/events/QuidditchSlytherinWin.mp4'
+  }, {
+    name: 'text',
+    type: 'text'
   }];
