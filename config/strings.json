@@ -1,0 +1,86 @@
+{
+	"join": {
+		"welcome": "Welcome ",
+		"new_here": " it looks like your new here. Type !sortinghat to get sorted."
+	},
+	"rules": {
+		"overview": "We have 3 rules at the Harry Potter Clan",
+		"number": "Rule #",
+		"rule": [
+		" - Neither Dobby NOR Glue are leaders of the HPC.",
+		" - No Muggles",
+		" - No Mudbloods",
+		" - NO RULES!",
+		" - Two Rax and Bax",
+		" - ALWAYS deny the Aegis",
+		" - There is no Rule #8"]
+	},
+	"sorting": {
+		"congrats":"Congratulations ",
+		"joined_house":". You have joined House ",
+		"user_already_sorted": "You've already been sorted! Are you trying to dishonour you're house?!",
+		"is_a": " is a "
+	},
+	"house": {
+		"proud_member_of":" is a proud member of House ",
+		"muggle":" is a muggle! How IMBARASSING",
+		"cannot_find": "I'm sorry, I can't find a house for "
+	},
+	"commends": {
+		"user_has":" has ",
+		"commends": " commends. What a player!",
+		"jealous": " Are you jealus?",
+		"cant_find": "I'm sorry, I can't find ",
+		"saved": "Your commends are saved: ",
+		"error": "Error saving commends: ",
+		"non_number": "please make sure to use a number",
+		"no_parameter": "please supply the number of commends !setcommends <number>",
+		"no_commends": " has no commends :("
+	},
+	"status": {
+		"overview": "Status for ",
+		"house": "House: ",
+		"commends": "Commends: ",
+		"gold": "Goblin Gold: ",
+		"cant_find": "I'm sorry, I can't find status for "
+	},
+	"general": {
+		"exclamation": "!"
+	},
+	"dice": {
+		"rolling": "Rolling the dice with a ",
+		"sides": " sided die...",
+		"error": "I'm sorry, I can't find a die that fits ",
+		"result": "The result is: "
+	},
+	"coin": {
+		"flipping": "Flipping a coin made of goblin gold...",
+		"result": "The result is: ",
+		"heads": "Heads!",
+		"tails": "Tails!"
+	},
+	"cup": {
+		"standings": "House Cup Standings:",
+		"spacer": ": ",
+		"not_started": "It looks like the house cup hasn't started yet.",
+		"reset": "The house cup has been reset. May the odds be forever in your favor",
+		"added": "Added ",
+		"subtracted": "Subtracted ",
+		"imbarassing": ". How imbarassing!",
+		"points_to": " points to ",
+		"points_from": " points from ",
+		"error_no_params": "Usage: !add h 5",
+		"error_no_points": "Usage: !add h 5",
+		"error_bad_points": "You can only award 5 or 10 points at a time.",
+		"error_bad_house": "Please enter the first letter of a house (g/h/r/s)."
+	},
+	"gold": {
+		"gave": "You have accrued ",
+		"to_channel": " gold in interest from Gringotts Wizarding Bank.",
+		"error_no_params": "Please specificy an amount of gold to give.",
+		"error_greater_than_zero": "Gold must be greater than zero"
+	},
+	"subscribe": {
+		"has_subscribed": " has subscribed!!"
+	}
+}

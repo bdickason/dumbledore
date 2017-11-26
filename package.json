@@ -23,6 +23,7 @@
     "url": "git://github.com/bdickason/dumbledore.git"
   },
   "dependencies": {
+    "hpc-bot": "0.6.0",
     "dotenv": "^4.0.0"
   },
   "license": "GPL-3.0",
