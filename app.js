@@ -40,6 +40,12 @@ Join.start(options.eventbus, bot.User);
 var Gold = require('./lib/gold');
 Gold.start(options.eventbus, bot.Resource, bot.Channel);
 
+// butterbeer
+var Beer = require('./lib/beer');
+Beer.start(options.eventbus, bot.Resource, bot.Channel, bot.User);
+bot.commands.add(Beer.commands);
+bot.overlays.add(Beer.overlay);
+
 // !setcommends / !commends
 var Commends = require('./lib/commends');
 Commends.start(options.eventbus, bot.User);

@@ -82,5 +82,13 @@
 	},
 	"subscribe": {
 		"has_subscribed": " has subscribed!!"
+	},
+	"beer": {
+		"sorry": "Sorry ",
+		"not_enough_gold": " you don't have enough gold to buy ButterBeer(tm). Sad!",
+		"wow": "Woooooww! ",
+		"bought_channel": " just bought the channel a round of ButterBeer(tm). What a swell wizard!",
+		"cant_find": "I can't seem to find a user named ",
+		"bought_person": " just bought a round of ButterBeer(tm) for "
 	}
 }
