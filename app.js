@@ -43,28 +43,28 @@ Gold.start(options.eventbus, bot.Resource, bot.Channel);
 // !setcommends / !commends
 var Commends = require('./lib/commends');
 Commends.start(options.eventbus, bot.User);
-// commands.push(Commends);
+bot.commands.add(Commends.commands);
 
 // !house / !sortinghat
 var House = require('./lib/house');
 House.start(options.eventbus, bot.User);
 bot.overlays.add(House.overlay);
-// commands.push(House);
+bot.commands.add(House.commands);
 
 // !status
 var Status = require('./lib/status');
 Status.start(options.eventbus, bot.User);
-// commands.push(Status);
+bot.commands.add(Status.commands);
 
 // !dice / !coin
 var Random = require('./lib/random');
 Random.start(options.eventbus);
-// commands.push(Random);
+bot.commands.add(Random.commands);
 
 // !cup
 var Housecup = require('./lib/housecup');
 Housecup.start(options.eventbus, bot.Team);
-// commands.push(Housecup);
+bot.commands.add(Housecup.commands);
 
 // !hween
 var Halloween = require('./lib/halloween');
