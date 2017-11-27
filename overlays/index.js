@@ -23,7 +23,7 @@ module.exports = overlays = [
   }, {
     name: 'smoke',
     type: 'video',
-    file: 'overlays/events/smoke.mp4'
+    file: 'overlays/events/smokegank.mp4'
   }, {
     name: 'muggle',
     type: 'video',
