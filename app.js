@@ -44,7 +44,7 @@ Gold.start(options.eventbus, bot.Resource, bot.Channel);
 var Beer = require('./lib/beer');
 Beer.start(options.eventbus, bot.Resource, bot.Channel, bot.User);
 bot.commands.add(Beer.commands);
-bot.overlays.add(Beer.overlay);
+// bot.overlays.add(Beer.overlay);  // Add overlays once we have them
 
 // !setcommends / !commends
 var Commends = require('./lib/commends');
