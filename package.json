@@ -25,7 +25,7 @@
   "dependencies": {
     "chance": "^1.0.12",
     "dotenv": "^4.0.0",
-    "hpc-bot": "0.6.3"
+    "hpc-bot": "0.6.4"
   },
   "license": "GPL-3.0",
   "devDependencies": {
