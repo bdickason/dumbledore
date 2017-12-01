@@ -94,7 +94,7 @@ Halloween.start(options.eventbus, bot.Team);
 
 // Xmas Event
 var Xmas = require('./lib/xmas');
-Xmas.start(options.eventbus, bot.Team);
+Xmas.start(options.eventbus, bot.Team, bot.User, 200, 340);
 bot.commands.add(Xmas.commands);
 
 // Quickly load all commands?
