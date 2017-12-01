@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "dev": "node-dev app.js",
     "test": "./node_modules/.bin/gulp test --silent",
     "watch": "./node_modules/.bin/gulp watch"
   },
