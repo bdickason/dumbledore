@@ -72,10 +72,6 @@ var Housecup = require('./lib/housecup');
 Housecup.start(options.eventbus, bot.Team);
 bot.commands.add(Housecup.commands);
 
-// !hween
-var Halloween = require('./lib/halloween');
-Halloween.start(options.eventbus, bot.Team);
-// commands.push(Halloween);
 
 // Subscribers
 var Subscribe = require('./lib/subscribe');
@@ -90,6 +86,16 @@ bot.overlays.add(Quidditch.overlay);
 var Text = require('./lib/text');
 Text.start(options.eventbus);
 
+/* Seasonal Commands */
+
+// Halloween Event
+var Halloween = require('./lib/halloween');
+Halloween.start(options.eventbus, bot.Team);
+
+// Xmas Event
+var Xmas = require('./lib/xmas');
+Xmas.start(options.eventbus, bot.Team);
+bot.commands.add(Xmas.commands);
 
 // Quickly load all commands?
 // fs.readdir('./lib', function(err, directories) {
