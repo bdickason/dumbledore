@@ -16,6 +16,7 @@ var options = {
   clientID: process.env.HPC_CLIENTID,
   mixpanel: process.env.MIXPANEL,
   whitelist: require('./config/whitelist.json'),
+  youtubeKey: process.env.YOUTUBEKEY,
   eventbus: events
 };
 
