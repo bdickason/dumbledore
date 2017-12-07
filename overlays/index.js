@@ -23,7 +23,7 @@ module.exports = overlays = [
   }, {
     name: 'smoke',
     type: 'video',
-    file: 'overlays/events/smoke.mp4'
+    file: 'overlays/events/smokegank.mp4'
   }, {
     name: 'muggle',
     type: 'video',
@@ -171,4 +171,36 @@ module.exports = overlays = [
   }, {
     name: 'text',
     type: 'text'
-  }];
+  }, {
+    name: 'XmasG',
+    type: 'video',
+    file: 'lib/xmas/videos/XmasG.mp4'
+  }, {
+    name: 'XmasH',
+    type: 'video',
+    file: 'lib/xmas/videos/XmasH.mp4'
+  }, {
+    name: 'XmasR',
+    type: 'video',
+    file: 'lib/xmas/videos/XmasR.mp4'
+  }, {
+    name: 'XmasS',
+    type: 'video',
+    file: 'lib/xmas/videos/XmasS.mp4'
+  }, {
+    name: 'xgl',
+    type: 'video',
+    file: 'lib/xmas/videos/xgl.mp4'
+  }, {
+    name: 'xgw',
+    type: 'video',
+    file: 'lib/xmas/videos/xgw.mp4'
+  }, {
+    name: 'xrl',
+    type: 'video',
+    file: 'lib/xmas/videos/xrl.mp4'
+  }, {
+    name: 'xrw',
+    type: 'video',
+    file: 'lib/xmas/videos/xrw.mp4'
+}];
