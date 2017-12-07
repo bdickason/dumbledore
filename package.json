@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "dev": "node-dev app.js",
     "test": "./node_modules/.bin/gulp test --silent",
     "watch": "./node_modules/.bin/gulp watch"
   },
@@ -25,7 +26,7 @@
   "dependencies": {
     "chance": "^1.0.12",
     "dotenv": "^4.0.0",
-    "hpc-bot": "0.6.8"
+    "hpc-bot": "0.7.0"
   },
   "license": "GPL-3.0",
   "devDependencies": {

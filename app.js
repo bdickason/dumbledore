@@ -1,8 +1,8 @@
 var fs = require('fs');
 require('dotenv').config();	// Load environment variables from .env
 
-// var hpcbot = require('../hpc-bot');  // For testing
-var hpcbot = require('hpc-bot');
+var hpcbot = require('../hpc-bot');  // For testing
+// var hpcbot = require('hpc-bot');
 
 // Shared eventbus for passing around events
 var EventEmitter = require('events');
@@ -16,6 +16,7 @@ var options = {
   clientID: process.env.HPC_CLIENTID,
   mixpanel: process.env.MIXPANEL,
   whitelist: require('./config/whitelist.json'),
+  youtubeKey: process.env.YOUTUBEKEY,
   eventbus: events
 };
 
