@@ -17,6 +17,8 @@ var options = {
   mixpanel: process.env.MIXPANEL,
   whitelist: require('./config/whitelist.json'),
   youtubeKey: process.env.YOUTUBEKEY,
+  twitchClientID: process.env.TWITCHCLIENTID,
+  twitchSecret: process.env.TWITCHSECRET,
   eventbus: events
 };
 
