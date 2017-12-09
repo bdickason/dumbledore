@@ -1,8 +1,8 @@
 var fs = require('fs');
 require('dotenv').config();	// Load environment variables from .env
 
-var hpcbot = require('../hpc-bot');  // For testing
-// var hpcbot = require('hpc-bot');
+// var hpcbot = require('../hpc-bot');  // For testing
+var hpcbot = require('hpc-bot');
 
 // Shared eventbus for passing around events
 var EventEmitter = require('events');
@@ -75,7 +75,6 @@ Subscribe.start(options.eventbus);
 // Quidditch
 var Quidditch = require('./lib/quidditch');
 Quidditch.start(options.eventbus, bot.Team);
-bot.overlays.add(Quidditch.overlay);
 
 // !text (External module)
 var Text = require('./lib/text');
@@ -90,7 +89,6 @@ Halloween.start(options.eventbus, bot.Team);
 // Xmas Event
 var Xmas = require('./lib/xmas');
 Xmas.start(options.eventbus, bot.Team, bot.User, bot.random, 24000, 32000);
-bot.commands.add(Xmas.commands);
 
 // Quickly load all commands?
 // fs.readdir('./lib', function(err, directories) {
