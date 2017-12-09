@@ -1,8 +1,8 @@
 var fs = require('fs');
 require('dotenv').config();	// Load environment variables from .env
 
-// var hpcbot = require('../hpc-bot');  // For testing
-var hpcbot = require('hpc-bot');
+var hpcbot = require('../hpc-bot');  // For testing
+// var hpcbot = require('hpc-bot');
 
 // Shared eventbus for passing around events
 var EventEmitter = require('events');
@@ -31,7 +31,6 @@ bot.overlays.add(overlays);
 // !rules - Shows the rules of the HPC
 var rules = require('./lib/rules');
 rules.start(options.eventbus);
-bot.commands.add(rules.commands);
 
 // Message on Join
 var Join = require('./lib/join');
@@ -44,34 +43,29 @@ Gold.start(options.eventbus, bot.Resource, bot.Channel);
 // butterbeer
 var Beer = require('./lib/beer');
 Beer.start(options.eventbus, bot.Resource, bot.Channel, bot.User);
-bot.commands.add(Beer.commands);
 // bot.overlays.add(Beer.overlay);  // Add overlays once we have them
 
 // !setcommends / !commends
 var Commends = require('./lib/commends');
 Commends.start(options.eventbus, bot.User);
-bot.commands.add(Commends.commands);
 
 // !house / !sortinghat
 var House = require('./lib/house');
 House.start(options.eventbus, bot.User);
 bot.overlays.add(House.overlay);
-bot.commands.add(House.commands);
 
 // !status
 var Status = require('./lib/status');
 Status.start(options.eventbus, bot.User);
-bot.commands.add(Status.commands);
+
 
 // !dice / !coin
 var Random = require('./lib/random');
 Random.start(options.eventbus);
-bot.commands.add(Random.commands);
 
 // !cup
 var Housecup = require('./lib/housecup');
 Housecup.start(options.eventbus, bot.Team);
-bot.commands.add(Housecup.commands);
 
 
 // Subscribers
