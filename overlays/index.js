@@ -53,14 +53,17 @@ module.exports = overlays = [
     // Fake Ads
     name: 'kia',
     type: 'video',
+    layout: 'fullscreen',
     file: 'overlays/ads/kia.mp4'
   }, {
     name: 'monster',
     type: 'video',
+    layout: 'fullscreen',
     file: 'overlays/ads/monster.mp4'
   }, {
     name: 'polo',
     type: 'video',
+    layout: 'fullscreen',
     file: 'overlays/ads/Polo.mp4'
   }, {
     name: 'hweengwin',
