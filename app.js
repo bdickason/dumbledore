@@ -92,7 +92,7 @@ Halloween.start(options.eventbus, bot.Team);
 
 // Xmas Event
 var Xmas = require('./lib/xmas');
-Xmas.start(options.eventbus, bot.Team, bot.User, bot.random, 24000, 32000);
+Xmas.start(options.eventbus, bot.Team, bot.User, bot.random, 30000, 32000);
 
 // Quickly load all commands?
 // fs.readdir('./lib', function(err, directories) {
