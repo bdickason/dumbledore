@@ -175,6 +175,10 @@ module.exports = overlays = [
     name: '3runes',
     type: 'video',
     file: 'overlays/events/runes.mp4'
+  },{
+    name: 'picks',
+    type: 'video',
+    file: 'overlays/events/QualityPicks.mp4'
   }, {
     name: 'text',
     type: 'text'
