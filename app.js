@@ -93,16 +93,3 @@ Halloween.start(options.eventbus, bot.Team);
 // Xmas Event
 var Xmas = require('./lib/xmas');
 Xmas.start(options.eventbus, bot.Team, bot.User, bot.random, 30000, 32000);
-
-// Quickly load all commands?
-// fs.readdir('./lib', function(err, directories) {
-//   if(err) {
-//     console.error('There was an issue reading the commands directory', err);
-//   }
-//   directories.forEach(function(directory) {
-//     // 1. Require the module
-//     var tmp = require('./lib/' + directory);
-//     // Register chat listeners
-//     bot.commands.add(tmp.commands);
-//   });
-// });
