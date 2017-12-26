@@ -1,6 +1,6 @@
 {
   "name": "dumbledore",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "HPC-specific code for the hpc.dumbledore twitch bot",
   "main": "app.js",
   "scripts": {
@@ -26,7 +26,8 @@
   "dependencies": {
     "chance": "^1.0.12",
     "dotenv": "^4.0.0",
-    "hpc-bot": "0.8.10"
+    "hpc-bot": "0.8.11",
+    "twitch-overlay": "^1.3.3"
   },
   "license": "GPL-3.0",
   "devDependencies": {

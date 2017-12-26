@@ -20,6 +20,8 @@ var options = {
   hostname: process.env.HOSTNAME,
   twitchClientID: process.env.TWITCHCLIENTID,
   twitchSecret: process.env.TWITCHSECRET,
+  logglyToken: process.env.LOGGLYTOKEN,
+  logglySubdomain: process.env.LOGGLYSUBDOMAIN,
   eventbus: events
 };
 
