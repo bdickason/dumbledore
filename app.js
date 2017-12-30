@@ -57,7 +57,6 @@ Commends.start(options.eventbus, bot.User);
 // !house / !sortinghat
 var House = require('./lib/house');
 House.start(options.eventbus, bot.User);
-bot.overlays.add(House.overlay);
 
 // !status
 var Status = require('./lib/status');
@@ -80,7 +79,6 @@ Subscribe.start(options.eventbus);
 // Quidditch
 var Quidditch = require('./lib/quidditch');
 Quidditch.start(options.eventbus, bot.Team);
-bot.overlays.add(Quidditch.overlay);
 
 // !text (External module)
 var Text = require('./lib/text');
