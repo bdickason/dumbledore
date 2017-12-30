@@ -27,7 +27,7 @@
     "chance": "^1.0.12",
     "dotenv": "^4.0.0",
     "hpc-bot": "0.8.11",
-    "twitch-overlay": "^1.3.3"
+    "twitch-overlay": "^1.4.3"
   },
   "license": "GPL-3.0",
   "devDependencies": {
