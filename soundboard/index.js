@@ -111,7 +111,7 @@ let openclose = {
   ]
 }
 
-/*
+
 let housecup = {
   title: "House Cup",
   subgroup: [
@@ -286,7 +286,6 @@ let housecup = {
     }
   ]
 }
-*/
 
 let halloween = {
   title: "Halloween",
@@ -305,6 +304,6 @@ module.exports = soundboard = [
   sponsors,
   quidditch,
   openclose,
-  // housecup,
+  housecup,
   halloween
 ]

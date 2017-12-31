@@ -32,6 +32,10 @@ var bot = new hpcbot(options);
 var overlays = require('./overlays');
 bot.overlays.add(overlays);
 
+/* Setup soundboard */
+var eventList = require('./soundboard');
+bot.soundboard.add(eventList);
+
 /* Setup commands */
 // !rules - Shows the rules of the HPC
 var rules = require('./lib/rules');
