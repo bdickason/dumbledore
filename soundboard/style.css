@@ -1,0 +1,107 @@
+/* Reset default styling */
+fieldset {
+  border: 0px;
+}
+
+/* Major components */
+
+.border {
+  float: left;
+  width: 20%;
+  margin: 1em;
+  border: solid black 10px;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  width: 100%;
+  padding: 15px 5px;
+  font-size: 24px;
+  /*/font-weight: bold;*/
+}
+
+.header > legend {
+  height: 40px;
+  font-size: 30px;
+  color: blue;
+  padding: 0px 5px;
+  font-weight: bold;
+}
+
+.subgroup > legend {
+  text-align: center;
+  height: 30px;
+  font-size: 20px;
+  color: black;
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+/* House cup subgroups */
+
+.subgroup button {
+  font-size: 24px;
+  padding: 15px 10px;
+  width: 50%
+}
+
+button.gryffindor {
+  background-color: crimson;
+  color: white;
+}
+
+.gryffindor:nth-child(4), .gryffindor:nth-child(5) {
+  opacity: 0.6;
+}
+
+button.hufflepuff {
+  background-color: yellow;
+  color: black;
+}
+
+.hufflepuff:nth-child(4), .hufflepuff:nth-child(5) {
+  opacity: 0.6;
+}
+
+button.ravenclaw {
+  background-color: blue;
+  color: white;
+}
+
+.ravenclaw:nth-child(4), .ravenclaw:nth-child(5) {
+  opacity: 0.6;
+}
+
+button.slytherin {
+  background-color: green;
+  color: black;
+}
+
+.slytherin:nth-child(4), .slytherin:nth-child(5) {
+  opacity: 0.6;
+}
+
+/* House Cup Winners */
+
+button.winner {
+  width: 100%;
+}
+
+#gwins {
+  background-color: red;
+}
+
+#hwins {
+  background-color: yellow;
+  color: black;
+}
+
+#rwins {
+  background-color: blue;
+}
+
+#swins {
+  background-color: green;
+  color: black;
+}
