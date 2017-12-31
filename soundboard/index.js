@@ -114,7 +114,7 @@ let openclose = {
 
 let housecup = {
   title: "House Cup",
-  subgroup: [
+  items: [
     {
       title: "Gryffindor",
       items: [
@@ -127,7 +127,7 @@ let housecup = {
           ]
         },
         {
-          name: "+5",
+          name: "+10",
           event: "cup:add",
           parameters: [
             "Dumbledore",
@@ -164,7 +164,7 @@ let housecup = {
           ]
         },
         {
-          name: "+5",
+          name: "+10",
           event: "cup:add",
           parameters: [
             "Dumbledore",
@@ -201,7 +201,7 @@ let housecup = {
           ]
         },
         {
-          name: "+5",
+          name: "+10",
           event: "cup:add",
           parameters: [
             "Dumbledore",
@@ -238,7 +238,7 @@ let housecup = {
           ]
         },
         {
-          name: "+5",
+          name: "+10",
           event: "cup:add",
           parameters: [
             "Dumbledore",
