@@ -1,4 +1,6 @@
-var fs = require('fs');
+let fs = require('fs')
+let path = require('path')
+
 require('dotenv').config();	// Load environment variables from .env
 
 // var hpcbot = require('../hpc-bot');  // For testing
@@ -31,6 +33,11 @@ var bot = new hpcbot(options);
 /* Setup overlays */
 var overlays = require('./overlays');
 bot.overlays.add(overlays);
+
+/* Setup soundboard */
+var eventList = require('./soundboard');
+bot.soundboard.add(eventList);
+bot.soundboard.css(fs.readFileSync(path.join(__dirname, './soundboard/style.css')))  // Set custom css on server
 
 /* Setup commands */
 // !rules - Shows the rules of the HPC
