@@ -1,3 +1,10 @@
+/* Reset default styling */
+fieldset {
+  border: 0px;
+}
+
+/* Major components */
+
 .border {
   float: left;
   width: 20%;
@@ -14,7 +21,7 @@ button {
   /*/font-weight: bold;*/
 }
 
-.title {
+.header > legend {
   height: 40px;
   font-size: 30px;
   color: blue;
@@ -22,7 +29,7 @@ button {
   font-weight: bold;
 }
 
-.subtitle {
+.subgroup > legend {
   text-align: center;
   height: 30px;
   font-size: 20px;
@@ -31,156 +38,70 @@ button {
   font-weight: bold;
 }
 
-.divider {
-  border-bottom: 1px solid #000;
-  padding-top: 50px;
+/* House cup subgroups */
+
+.subgroup button {
+  font-size: 24px;
+  padding: 15px 10px;
+  width: 50%
 }
 
-.wincheck {
-  width: 20px;
-  position: relative;
-  margin: 20px auto;
-  label {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient(top, #222 0%, #45484d 100%);
-    border-radius: 4px;
-    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
-    &:after {
-      content: '';
-      width: 9px;
-      height: 5px;
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      border: 3px solid #fcfff4;
-      border-top: none;
-      border-right: none;
-      background: transparent;
-      opacity: 0;
-      transform: rotate(-45deg);
-    }
-    &:hover::after {
-      opacity: 0.3;
-    }
-  }
-  input[type=checkbox] {
-    visibility: hidden;
-    &:checked + label:after {
-      opacity: 1;
-    }
-  }
-}
-
-
-.wincheck {
-  input:checked {
-  height: 50px;
-  width: 50px;
-}
-  }
-
-.gbutton {
+button.gryffindor {
   background-color: crimson;
   color: white;
+}
+
+.gryffindor:nth-child(4), .gryffindor:nth-child(5) {
+  opacity: 0.6;
+}
+
+button.hufflepuff {
+  background-color: yellow;
+  color: black;
+}
+
+.hufflepuff:nth-child(4), .hufflepuff:nth-child(5) {
+  opacity: 0.6;
+}
+
+button.ravenclaw {
+  background-color: blue;
+  color: white;
+}
+
+.ravenclaw:nth-child(4), .ravenclaw:nth-child(5) {
+  opacity: 0.6;
+}
+
+button.slytherin {
+  background-color: green;
+  color: black;
+}
+
+.slytherin:nth-child(4), .slytherin:nth-child(5) {
+  opacity: 0.6;
+}
+
+/* House Cup Winners */
+
+button.winner {
   width: 100%;
-  padding: 15px 10px;
-  font-size: 24px;
-  }
-
-  .hbutton {
-    background-color: yellow;
-    color: black;
-    width: 100%;
-    padding: 15px 10px;
-    font-size: 24px;
-  }
-
-  .rbutton {
-    background-color: blue;
-    color: white;
-    width: 100%;
-    padding: 15px 10px;
-    font-size: 24px;
-  }
-
-  .sbutton {
-    background-color: green;
-    color: black;
-    width: 100%;
-    padding: 15px 10px;
-    font-size: 24px;
-  }
-
-.addgbutton {
-  background-color: crimson;
-  color: white;
-  width: 50%;
-  padding: 15px 10px;
-  font-size: 24px;
-  }
-
-.subgbutton {
-  background-color: crimson;
-  color: white;
-  width: 50%;
-  padding: 15px 10px;
-  font-size: 24px;
-  opacity: 0.6;
 }
 
-.addhbutton {
+#gwins {
+  background-color: red;
+}
+
+#hwins {
   background-color: yellow;
   color: black;
-  width: 50%;
-  padding: 15px 10px;
-  font-size: 24px;
 }
 
-.subhbutton {
-  background-color: yellow;
-  color: black;
-  width: 50%;
-  padding: 15px 10px;
-  font-size: 24px;
-  opacity: 0.6;
-}
-
-
-.addrbutton {
+#rwins {
   background-color: blue;
-  color: white;
-  width: 50%;
-  padding: 15px 10px;
-  font-size: 24px;
 }
 
-.subrbutton {
-  background-color: blue;
-  color: white;
-  width: 50%;
-  padding: 15px 10px;
-  font-size: 24px;
-  opacity: 0.6;
-}
-
-.addsbutton {
+#swins {
   background-color: green;
   color: black;
-  width: 50%;
-  padding: 15px 10px;
-  font-size: 24px;
-}
-
-.subsbutton {
-  background-color: green;
-  color: black;
-  width: 50%;
-  padding: 15px 10px;
-  font-size: 24px;
-  opacity: 0.6;
 }

@@ -69,6 +69,16 @@ let xmas = {
   ]
 }
 
+let quidditch = {
+  title: "Quidditch",
+  items: [
+    {
+      name: "Start!",
+      event: "overlay:quidditch:show"
+    }
+  ]
+}
+
 let sponsors = {
   title: "Sponsors",
   items: [
@@ -83,16 +93,6 @@ let sponsors = {
     {
       name: "Polo",
       event: "overlay:polo:show"
-    }
-  ]
-}
-
-let quidditch = {
-  title: "Quidditch",
-  items: [
-    {
-      name: "Start!",
-      event: "overlay:quidditch:show"
     }
   ]
 }
@@ -268,19 +268,19 @@ let housecup = {
       items: [
         {
           name: "Gryffindor",
-          event: ""
+          event: "gwins"
         },
         {
           name: "Hufflepuff",
-          event: ""
+          event: "hwins"
         },
         {
           name: "Ravenclaw",
-          event: ""
+          event: "rwins"
         },
         {
           name: "Slytherin",
-          event: ""
+          event: "swins"
         }
       ]
     }
@@ -301,8 +301,8 @@ let halloween = {
 module.exports = soundboard = [
   overlays,
   xmas,
-  sponsors,
   quidditch,
+  sponsors,
   openclose,
   housecup,
   halloween
