@@ -74,7 +74,7 @@ Random.start(options.eventbus);
 
 // !cup
 var Housecup = require('./lib/housecup');
-Housecup.start(options.eventbus, bot.Team);
+Housecup.start(options.eventbus, bot.Team, bot.User, bot.Resource);
 
 
 // Subscribers
