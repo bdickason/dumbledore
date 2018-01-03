@@ -3,8 +3,7 @@ let path = require('path')
 
 require('dotenv').config();	// Load environment variables from .env
 
-// var hpcbot = require('../hpc-bot');  // For testing
-var hpcbot = require('hpc-bot');
+var hpcbot = require('hpcbot');
 
 // Shared eventbus for passing around events
 var EventEmitter = require('events');
