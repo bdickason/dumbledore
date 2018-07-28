@@ -3,7 +3,7 @@ module.exports = overlays = [
   {
     name: 'hpcwins',
     type: 'video',
-    file: 'overlays/events/hpcwins.mp4'
+    file: 'overlays/events/hpcwins2018.mp4'
   }, {
     name: 'powermove',
     type: 'video',
@@ -42,30 +42,53 @@ module.exports = overlays = [
     type: 'video',
     file: 'overlays/events/Buyback.mp4'
   }, {
-    name: 'open',
+    name: 'opening',
     type: 'video',
+    layout: 'fullscreen',
     file: 'overlays/events/Opening.mp4'
   }, {
-    name: 'close',
+    name: 'closing',
     type: 'video',
+    layout: 'fullscreen',
     file: 'overlays/events/Closing.mp4'
   }, {
     // Fake Ads
+    name: 'goodhumour',
+    type: 'video',
+    layout: 'fullscreen',
+    file: 'overlays/ads/goodhumour.webm'
+  }, {
     name: 'kia',
     type: 'video',
     layout: 'fullscreen',
-    file: 'overlays/ads/kia.mp4'
+    file: 'overlays/ads/kia.webm'
   }, {
     name: 'monster',
     type: 'video',
     layout: 'fullscreen',
-    file: 'overlays/ads/monster.mp4'
+    file: 'overlays/ads/monster.webm'
   }, {
     name: 'polo',
     type: 'video',
     layout: 'fullscreen',
-    file: 'overlays/ads/Polo.mp4'
+    file: 'overlays/ads/Polo.webm'
   }, {
+    name: 'dumbledoors',
+    type: 'video',
+    file: 'overlays/ads/dumbledoors.mp4'
+  }, {
+    name: 'segway',
+    type: 'video',
+    layout: 'fullscreen',
+    file: 'overlays/ads/segway.webm'
+  },{
+    name: 'culvers',
+    type: 'video',
+    layout: 'fullscreen',
+    file: 'overlays/ads/culvers.webm'
+  },
+
+  {
     name: 'hweengwin',
     type: 'video',
     file: 'overlays/events/HweenGWin.mp4'
@@ -136,19 +159,23 @@ module.exports = overlays = [
   }, {
     name: 'cuphwins',
     type: 'video',
-    file: 'overlays/events/HufflepuffWins.mp4'
+    layout: 'fullscreen',
+    file: 'overlays/events/HufflepuffWins.webm'
   }, {
     name: 'cupgwins',
     type: 'video',
-    file: 'overlays/events/GryffindorWins.mp4'
+    layout: 'fullscreen',
+    file: 'overlays/events/GryffindorWins.webm'
   }, {
     name: 'cuprwins',
     type: 'video',
-    file: 'overlays/events/RavenclawWins.mp4'
+    layout: 'fullscreen',
+    file: 'overlays/events/RavenclawWins.webm'
   }, {
     name: 'cupswins',
     type: 'video',
-    file: 'overlays/events/SlytherinWins.mp4'
+    layout: 'fullscreen',
+    file: 'overlays/events/SlytherinWins.webm'
   }, {
     // Goblin Gold
     name: 'gold',
@@ -179,7 +206,38 @@ module.exports = overlays = [
     name: 'picks',
     type: 'video',
     file: 'overlays/events/QualityPicks.mp4'
-  }, {
+  },{
+    name: '4runes',
+    type: 'video',
+    file: 'overlays/events/4runes.mp4'
+  },{
+    name: 'juked',
+    type: 'video',
+    file: 'overlays/events/juked.mp4'
+  },{
+    name: 'suicidepact',
+    type: 'video',
+    file: 'overlays/events/suicidepact.mp4'
+  },{
+    name: 'teamwork',
+    type: 'video',
+    file: 'overlays/events/teamwork.mp4'
+  },{
+    name: 'justscummy',
+    type: 'video',
+    layout: 'fullscreen',
+    file: 'overlays/events/justscummy.webm'
+  },{
+    name: 'fullpurge',
+    type: 'video',
+    layout: 'fullscreen',
+    file: 'overlays/events/fullpurge.webm'
+  },{
+    name: 'fallingrunes',
+    type: 'video',
+    layout: 'fullscreen',
+    file: 'overlays/events/fallingrunes.webm'
+  },{
     name: 'text',
     type: 'text'
   }];

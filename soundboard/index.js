@@ -29,6 +29,10 @@ let overlays = {
       event: "overlay:hpcwins:show"
     },
     {
+      name: "Juked",
+      event: "overlay:juked:show"
+    },
+    {
       name: "Muggle?",
       event: "overlay:muggle:show"
     },
@@ -45,16 +49,36 @@ let overlays = {
       event: "overlay:smoke:show"
     },
     {
+      name: "Suicide Pact",
+      event: "overlay:suicidepact:show"
+    },
+    {
+      name: "Teamwork",
+      event: "overlay:teamwork:show"
+    },
+    {
       name: "Two Rax",
       event: "overlay:tworax:show"
+    },
+    {
+      name: "Quality Picks",
+      event: "overlay:picks:show"
     },
     {
       name: "3 Runes",
       event: "overlay:3runes:show"
     },
     {
-      name: "Quality Picks",
-      event: "overlay:picks:show"
+      name: "4 Runes",
+      event: "overlay:4runes:show"
+    },
+    {
+      name: "Full Purge",
+      event: "overlay:fullpurge:show"
+    },
+    {
+      name: "Just Scummy",
+      event: "overlay:justscummy:show"
     }
   ]
 }
@@ -83,6 +107,14 @@ let sponsors = {
   title: "Sponsors",
   items: [
     {
+      name: "Culvers",
+      event: "overlay:culvers:show"
+    },
+    {
+      name: "Good Humour",
+      event: "overlay:goodhumour:show"
+    },
+    {
       name: "Kia",
       event: "overlay:kia:show"
     },
@@ -93,6 +125,14 @@ let sponsors = {
     {
       name: "Polo",
       event: "overlay:polo:show"
+    },
+    {
+      name: "Segway",
+      event: "overlay:segway:show"
+    },
+    {
+      name: "The Dumbledoors",
+      event: "overlay:dumbledoors:show"
     }
   ]
 }
@@ -110,7 +150,6 @@ let openclose = {
     }
   ]
 }
-
 
 let housecup = {
   title: "House Cup",
@@ -268,19 +307,19 @@ let housecup = {
       items: [
         {
           name: "Gryffindor",
-          event: "gwins"
+          event: "overlay:cupgwins:show"
         },
         {
           name: "Hufflepuff",
-          event: "hwins"
+          event: "overlay:cuphwins:show"
         },
         {
           name: "Ravenclaw",
-          event: "rwins"
+          event: "overlay:cuprwins:show"
         },
         {
           name: "Slytherin",
-          event: "swins"
+          event: "overlay:cupswins:show"
         }
       ]
     }
