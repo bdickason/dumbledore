@@ -71,7 +71,7 @@ module.exports = overlays = [
     name: 'polo',
     type: 'video',
     layout: 'fullscreen',
-    file: 'overlays/ads/Polo.webm'
+    file: 'overlays/ads/polo.webm'
   }, {
     name: 'dumbledoors',
     type: 'video',
