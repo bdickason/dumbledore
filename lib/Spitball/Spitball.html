@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-image: url('./static/images/Classroom.png');
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload='startGame()'>
+
+  Power: <input type="text" id="PowerInput">
+  Angle: <input type="text" id="AngleInput">
+  Shots Left: <input type="text" id="ShotsLeft">
+  <button onclick = "lockparams()">Enter</button>
+  <button onclick = "fire()">Fire</button>
+<script>
+
+var Draco;
+var Snape;
+var Hermione;
+var Ron;
+var Spitball;
+var pwr = 0;
+var ang = 0;
+var Wind = 0;
+var WindText = "Wind = " + Wind;
+var FireToggle = 0;
+var FrameCount = 0;
+var Gravity = 9.8;
+var RandConfig = Math.round(Math.random()*2);
+var HermioneX;
+var RonX;
+var SnapeX;
+var TeacherX = 250 + (Math.random()) * 200;
+var SnapeY = 300 + (Math.random()) * 100;
+var Student1X = 700 + (Math.random()) * 50;
+var Student2X = 1000 + (Math.random()) * 100;
+var Snape2X = 700 + (Math.random()) * 50;
+var Ron2X = 250 + (Math.random()) * 200;
+var ShotCount;
+var ShotCountText = "Shots Left: " + ShotCount;
+var LastShotPwrText = "Last Shot: Power " + pwr;
+var LastShotAngText = "                 Angle  " + ang;
+var collisionSnape = 0;
+var collisionHermione = 0;
+var collisionGround = 0;
+var collisionLatch = 0;
+var House = './static/images/Slytherin';///////Slytherin for testing.  remove default house////////////
+var HouseBanner;
+
+function startGame() {
+
+  House = House + '.png';/******Needs a function to grab user house*********/
+  console.log(House);
+
+/**********This block determines positions of characters*************/
+  if (RandConfig==0){
+  HermioneX = Student1X;
+  RonX = Student2X;
+  SnapeX = TeacherX;
+  }
+  if (RandConfig==1){
+  HermioneX = Student2X;
+  RonX = TeacherX - 50;
+  SnapeX = Student1X - 50;
+  }
+  if (RandConfig==2){
+  HermioneX = Student2X;
+  RonX = Student1X;
+  SnapeX = TeacherX;
+  }
+
+	Draco = new component(178, 168, './static/images/Draco.png', 10, 555, 'image','Draco');
+	Snape = new component(263, 426, './static/images/Snape.png', SnapeX, SnapeY, 'image', 'Snape');
+	Hermione = new component(183, 230, './static/images/Hermione.png', HermioneX, 500, 'image', 'Hermione');
+	Ron = new component(300, 131, './static/images/Ron.png', RonX, 595, 'image', 'Ron');
+  Spitball = new component(30, 30, './static/images/Spitball.png', 155, 580, 'image', 'Spitball');
+  Straw = new component(60, 40, './static/images/StrawRotate.png', 101, 605, 'image', 'Straw');
+  Splat = new component(80, 80, './static/images/Splat.png', 0, 800, 'image', 'Splat');
+  HouseBanner = new component(100 , 200, House, 30, 180, 'image', 'HouseBanner');
+
+  createWind();
+
+	myGameArea.intro();
+}
+
+
+var blowSound = new Audio('./static/audio/Blow.wav');
+var splatSound = new Audio('./static/audio/Splat.wav');
+var music = new Audio('./static/audio/SpitballMusic3.wav');
+
+var myGameArea = {
+    canvas : document.createElement('canvas'),
+    intro: function() {
+      this.canvas.width = 1280;
+      this.canvas.height = 720;
+      this.context = this.canvas.getContext('2d');
+      document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+      this.frameNo = 0;
+
+},
+    start : function() {
+      clearInterval(this.interval);
+        music.play();/////////For some reason, this doesnt work :(//////////////
+        //this.interval = setInterval(updateGameArea, 20);  ///I dont know why this was here in quidditch code. I commented it out and it had no effect ???///////
+        },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        var ctx = this.canvas.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.fillStyle="white";
+
+        ctx.fillText(WindText,10,40,);
+        ctx.fillText(ShotCountText,10,90,);
+        ctx.fillText(LastShotPwrText,10,130,);
+        ctx.fillText(LastShotAngText,10,170,);
+
+        },
+    stop : function() {
+        clearInterval(this.interval);
+    }
+}
+
+/*************Responsible for Drawing components and updating locations********/
+function component(width, height, color, x, y, type, name) {
+    this.name = name;
+    this.type = type;
+    if (type == 'image') {
+        this.image = new Image();
+        this.image.src = color;
+    }
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;
+    this.x = x;
+    this.y = y;
+    this.update = function() {
+        ctx = myGameArea.context;
+        if (type == 'image') {
+            ctx.drawImage(this.image,
+                this.x,
+                this.y,
+                this.width, this.height);
+        } else {
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+    this.newPos = function() {
+
+		        this.x += this.speedX;
+		        this.y += this.speedY;
+        }
+}
+
+
+/*****checks for collisions with characters.  THis is done by "drawing" 2 circles (think of a snowman)
+for each character.  If spitball collides with either circle, collision is detected.  Stupid, i know,
+but the other options were complicated************/
+function personCollisionCheck(){
+  var SpitballHitbox = {radius: 30, x: Spitball.x, y: Spitball.y};
+  var HermioneHitbox1 = {radius: 52, x: Hermione.x+90, y: Hermione.y+55};
+  var HermioneHitbox2 = {radius: 90, x: Hermione.x+90, y: Hermione.y+200};
+  var SnapeHitbox1 = {radius: 50, x: Snape.x+117, y: Snape.y+55};
+  var SnapeHitbox2 = {radius: 120, x: Snape.x+120, y: Snape.y+250};
+
+  var dx1 = SpitballHitbox.x - HermioneHitbox1.x;
+  var dy1 = SpitballHitbox.y - HermioneHitbox1.y;
+  var distance1 = Math.sqrt(dx1 * dx1 + dy1 * dy1);
+  if (distance1 < SpitballHitbox.radius + HermioneHitbox1.radius) {
+    collisionHermione = 1;
+  }
+
+  var dx2 = SpitballHitbox.x - HermioneHitbox2.x;
+  var dy2 = SpitballHitbox.y - HermioneHitbox2.y;
+  var distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+  if (distance2 < SpitballHitbox.radius + HermioneHitbox2.radius) {
+    collisionHermione = 1;
+    }
+
+  var dx3 = SpitballHitbox.x - SnapeHitbox1.x;
+  var dy3 = SpitballHitbox.y - SnapeHitbox1.y;
+  var distance3 = Math.sqrt(dx3 * dx3 + dy3 * dy3);
+  if (distance3 < SpitballHitbox.radius + SnapeHitbox1.radius) {
+    collisionSnape = 1;
+    }
+
+  var dx4 = SpitballHitbox.x - SnapeHitbox2.x;
+  var dy4 = SpitballHitbox.y - SnapeHitbox2.y;
+  var distance4 = Math.sqrt(dx4 * dx4 + dy4 * dy4);
+  if (distance4 < SpitballHitbox.radius + SnapeHitbox2.radius) {
+    collisionSnape = 1;
+    }
+}
+
+function groundCollisionCheck(){
+  if (Spitball.y >= 720){
+    collisionGround = 1;
+  }
+}
+
+/**This determines what happens when there is a collision.  There should be a small
+delay before playing the resulting movie, so that the viewer sees the splat**/
+function CollisionResults(){
+  if (collisionSnape == 1 && collisionLatch == 0){
+      collisionLatch = 1;
+      FireToggle=0;
+      Splat.x = Spitball.x+1;
+      Splat.y = Spitball.y-22;
+      music.pause();
+      splatSound.play();
+      setTimeout(function(){ alert("You Hit Snape"); }, 1000);  //////REMOVE THIS///////
+      setTimeout(function(){ location.reload(); }, 1050);  //////REMOVE THIS///////
+    ///////////////////////////REMOVE 5 POINTS FROM HOUSE///////////////////////
+    }
+  if (collisionHermione == 1 && collisionLatch == 0){
+    collisionLatch = 1;
+    FireToggle=0;
+    Splat.x = Spitball.x+1;
+    Splat.y = Spitball.y-22;
+    music.pause();
+    splatSound.play();
+    setTimeout(function(){ alert("You Hit Hermione"); }, 1000);  //////REMOVE THIS///////
+    setTimeout(function(){ location.reload(); }, 1050);  //////REMOVE THIS///////
+    //////////////////////////ADD 5 PINTS///////////////////////////////////////
+  }
+  if (collisionGround == 1){
+    if ((Spitball.y >= 720) && (ShotCount >> 0)){
+      Spitball.x=155;
+      Spitball.y=580;
+      FireToggle=0;
+    }
+    if (Spitball.y >= 720 && ShotCount <= 0){
+        music.pause();
+        alert("Game Over");  //////REMOVE THIS///////
+        location.reload();  //////REMOVE THIS///////
+        //////////No collisions and no shots left.  Close game.////////////////
+      }
+    else{
+      return;
+    }
+  }
+}
+
+/******Gets shots allowed from text field in browser.  Needs to be replaced by either a flat default value
+or get value from text field on soundbard****/
+function lockparams(){
+  ShotCount = parseInt(document.getElementById('ShotsLeft').value);
+  ShotCountText = "Shots Left: " + ShotCount;
+}
+
+/*creates random wind value*/
+function createWind(){
+  var rawWind = Math.round(Math.random() * 50);
+  if (rawWind<<25){
+    Wind = (rawWind-25)*(-1);
+  }
+  else{
+    Wind = rawWind - 25;
+  }
+  WindText = "Wind = " + Wind;
+}
+
+/*activates when fire button is clicked*/
+function fire(){
+  LastShotPwrText = "Last Shot: Power " + pwr;
+  LastShotAngText = "                 Angle  " + ang;
+  FireToggle=1;
+  blowSound.play();
+  if (ShotCount<=0){
+    ShotCount = 0;
+    ShotCountText = "Shots Left: " + (ShotCount);
+  }
+  else{
+  ShotCount = ShotCount - 1;
+  ShotCountText = "Shots Left: " + (ShotCount);
+}
+}
+
+/**determines the movement of the spitball.  coefficients that are in speed formulas
+are arbitrary and split out just for tweaking.**/
+function spitballmove(sbattr) {
+  pwr = parseInt(document.getElementById('PowerInput').value);
+  ang = parseInt(document.getElementById('AngleInput').value);
+  if (FireToggle==0){
+  sbattr.speedX = 0;
+  sbattr.speedY = 0;
+  FrameCount=0;
+  }
+  if (FireToggle==1){
+  sbattr.speedX = .25*pwr*(Math.cos((Math.PI*ang)/180))+(FrameCount*.045*Wind);
+  sbattr.speedY = (-1)*.25*pwr*(Math.sin((Math.PI*ang)/180))+(FrameCount*.45*Gravity);
+  FrameCount=FrameCount+.05;
+  Spitball.newPos();
+  Spitball.update();
+  }
+}
+
+
+setInterval(function() {spitballmove(Spitball)}, 50);
+
+setInterval(function() {updateGameArea()}, 50);
+/*calls for entity positions to be updated and drawn (line 129), and also calls for collision checks*/
+function updateGameArea() {
+  myGameArea.clear();
+  HouseBanner.update();
+  Snape.update();
+  Ron.update();
+  Hermione.update();
+  Draco.update();
+  Straw.update();
+  Splat.update();
+  groundCollisionCheck();
+  personCollisionCheck();
+  CollisionResults();
+}
+
+</script>
+</body>
+</html>
